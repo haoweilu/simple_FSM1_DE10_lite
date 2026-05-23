@@ -1,0 +1,23 @@
+|Block1
+LEDR[0] <= FSM1:inst.out_data[0]
+LEDR[1] <= FSM1:inst.out_data[1]
+LEDR[2] <= FSM1:inst.out_data[2]
+LEDR[3] <= FSM1:inst.out_data[3]
+MAX10_CLK1_50 => FSM1:inst.clk
+KEY[0] => FSM1:inst.rst_n
+SW[0] => FSM1:inst.in
+
+
+|Block1|FSM1:inst
+clk => state~1.DATAIN
+rst_n => state~3.DATAIN
+in => Selector1.IN2
+in => Selector3.IN1
+in => Selector0.IN1
+in => Selector2.IN1
+out_data[0] <= out_data.DB_MAX_OUTPUT_PORT_TYPE
+out_data[1] <= out_data[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[2] <= out_data[1].DB_MAX_OUTPUT_PORT_TYPE
+out_data[3] <= out_data.DB_MAX_OUTPUT_PORT_TYPE
+
+
